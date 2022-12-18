@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const ytdl = require("./ytdl-core/lib/index");
 
-// app.set("view engine", "ejs");
+
 
 app.get("/download", async (req, res) => {
   const v_id = req.query.url.split("v=")[1];
@@ -10,7 +10,7 @@ app.get("/download", async (req, res) => {
   console.log(
     info.formats.filter((format) => format.hasVideo && format.hasAudio)
   );
-  //   console.log(info);
+
 
   return res.json({
     url: info.formats.filter((format) => format.hasVideo && format.hasAudio)[0]
