@@ -12,7 +12,7 @@ app.get("/download", async (req, res) => {
   );
 
 
-  return res.json({url:info.formats.filter((format) => format.hasVideo && format.hasAudio)[0]});
+  return res.json({url:info.formats.filter((format) => format.hasVideo && format.hasAudio)[0].url});
 });
 
 app.listen(3000||process.env.PORT, () => {
